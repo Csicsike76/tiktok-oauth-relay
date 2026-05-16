@@ -1,0 +1,5 @@
+.env
+*.pyc
+__pycache__/
+tiktok_oauth_tokens.json
+tiktok_oauth_publish_log.json
