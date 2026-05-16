@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: tiktok-oauth-relay
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 60
+    envVars:
+      - key: TIKTOK_CLIENT_KEY_AC
+        sync: false
+      - key: TIKTOK_CLIENT_SECRET_AC
+        sync: false
+      - key: TIKTOK_CLIENT_KEY_FP
+        sync: false
+      - key: TIKTOK_CLIENT_SECRET_FP
+        sync: false
+      - key: TIKTOK_SANDBOX
+        value: "1"
+      - key: TIKTOK_SCOPES
+        value: video.publish
+      - key: OAUTH_SERVER_SECRET
+        generateValue: true
