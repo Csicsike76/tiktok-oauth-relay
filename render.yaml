@@ -20,3 +20,7 @@ services:
         value: video.publish
       - key: OAUTH_SERVER_SECRET
         generateValue: true
+      - key: TIKTOK_REDIRECT_URI_AC
+        value: https://tiktok-oauth-relay.onrender.com/tiktok/callback/ac
+      - key: TIKTOK_REDIRECT_URI_FP
+        value: https://tiktok-oauth-relay.onrender.com/tiktok/callback/fp
